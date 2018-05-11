@@ -68,8 +68,5 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     # always navigate to /vagrant on login
     echo "cd /vagrant" >> /home/vagrant/.bash_profile
-    # create development and test databases
-    createdb unicornpol_development
-    createdb unicornpol_test
   SHELL
 end
