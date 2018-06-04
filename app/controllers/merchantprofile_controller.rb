@@ -8,13 +8,17 @@ class MerchantprofileController < ApplicationController
 	end	
 
 	def new
+		@merchantprofile = Merchantprofile.new
 	end
 
 	def create
 		@merchantprofile = Merchantprofile.new(merchantprofile_params)
- 
-		@merchantprofile.save
-  		redirect_to @merchantprofile
+ 		
+ 		if @merchantprofile.save
+  			redirect_to @merchantprofile
+  		else
+  			render 'new'
+  		end
 	end
 
 	private
