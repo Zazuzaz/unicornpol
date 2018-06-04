@@ -1,0 +1,2 @@
+class Merchantprofile < ApplicationRecord
+end
