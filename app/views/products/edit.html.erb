@@ -1,0 +1,10 @@
+
+  <%= form_for(@product) do |form| %>
+    <p><%= form.label("Name") %></p>
+    <p><%= form.text_field("name") %></p>
+    <p><%= form.label("Description") %></p>
+    <p><%= form.text_area("description") %></p>
+    <p><%= form.submit %></p>
+  <% end %>
+  <p><%= link_to("Anuluj", product_path(@product)) %></p>
+  <p><%= link_to("Powrót do listy produktów", products_path) %></p>
