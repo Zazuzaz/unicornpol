@@ -1,10 +1,13 @@
 
   <%= form_for(@product) do |form| %>
-    <p><%= form.label("Name") %></p>
+    <p><%= form.label("Nazwa") %></p>
     <p><%= form.text_field("name") %></p>
-    <p><%= form.label("Description") %></p>
+    <p><%= form.label("Opis") %></p>
     <p><%= form.text_area("description") %></p>
+    <p><%= form.label("Oferta") %></p>
+    <p><%= form.text_field("suggested_price") %></p>
     <p><%= form.submit %></p>
   <% end %>
+  <p><%= link_to 'Usuń produkt', product_path(@product), method: :delete, data: {confirm: "Czy na pewno chcesz usunąć ten produkt?"} %></p>
   <p><%= link_to("Anuluj", product_path(@product)) %></p>
   <p><%= link_to("Powrót do listy produktów", products_path) %></p>
