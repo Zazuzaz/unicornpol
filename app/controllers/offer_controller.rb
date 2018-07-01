@@ -1,18 +1,19 @@
 class OfferController < ApplicationController
 	def index
-		@offer = offer.all
+		@offer = Offer.all
 	end
 
 	def show
-		@offer = offer.find(params[:id])
+		@offer = Offer.find(params[:id])
 	end	
 
-	def new
-		@offer = offer.new
-	end
+	# def new
+	# 	@offer = Offer.new
+	# 	@product = Product.find(params[:id])
+	# end
 
 	def create
-		@offer = offer.new(offer_params)
+		@offer = Offer.new(offer_params)
  		
  		if @offer.save
   			redirect_to @offer

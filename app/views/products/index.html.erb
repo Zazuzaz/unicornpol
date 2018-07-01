@@ -6,7 +6,7 @@
               <td><%= link_to(product.name, product_path(product)) %></td>
               <td><%= product.description %></td>
               <td><%= product.suggested_price %></td>
-              <td><%= link_to('Place new offer', new_offer_path(product)) %></td>
+              <td><%= link_to('Place new offer', make_offer_product_path(product)) %></td>
             </tr>
         </table>
 <% end %>
