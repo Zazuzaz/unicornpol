@@ -1,3 +1,76 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+	 font-family: Calibri, sans-serif;
+   margin: auto;
+   color: grey;
+}
+
+h1 {
+  color: white;
+}
+h4 {
+  color: white;
+}
+table {
+  border: 1px;
+  border-color: grey;
+}
+#header {
+  z-index:1;
+  text-align: left;
+  left: 50%;
+  margin-left: -500px;
+  position: fixed;
+  width:1000px;
+  height:100px;
+  background-color: pink;
+}
+
+#login {
+  align-self: right;
+}
+#menu {
+  text-align: center;
+  color: white;
+  z-index:1;
+  position: fixed;
+  left: 50%;
+  margin-left: -500px;
+  width:1000px;
+  height:70px;
+  background-color:#DB7093;
+  margin-top: 100px;
+}
+
+#list {
+  position: absolute;
+  margin-top: 170px;
+  left: 50%;
+  margin-left: -500px;
+}
+#fot {
+  width:250px;
+  height:250px;
+}
+#nazwa {
+  font-weight: bold;
+  font-size: 20px;
+}
+#produkt {
+    width: 310px;
+    border: 1px solid;
+    border-color:#F5F5DC;
+
+}
+#merchant {
+  text-align: right;
+}
+#footer {
+  text-align: center;
+  width:1000px;
+  height:30px;
+  background-color: pink;
+  margin-bottom: 0;
+}
