@@ -9,10 +9,14 @@ class ProductsController < ApplicationController
 
   def make_offer
     @product = Product.find(params[:id])
-    @offer = Offer.new
+    @offer = Offer.new(
+      product: @product, 
+      customer_id: 1, 
+      suggested_price: 999, 
+      description: '', title: '')
 
-    if @offer.save
-        redirect_to @product
+    if request.post? and @offer.save
+        redirect_to products_path
       else
         render 'make_offer'
       end
