@@ -1,4 +1,29 @@
-<%= form_with scope: :offer, local: true do |form| %>
+<%= form_with model: @offer, local: true do |form| %>
   <p>
-    
+    <%= @offer %>
   </p>
+
+<p>
+  <%= form.label :product_id %><br>
+  <%= form.text_field :product_id %><br>
+</p>
+<p>
+  <%= form.label :title %><br>
+  <%= form.text_field :title %><br>
+</p>
+<p>
+  <%= form.label :description %><br>
+  <%= form.text_field :description %><br>
+</p>
+<p>
+  <%= form.label :suggested_price %><br>
+  <%= form.text_field :suggested_price %><br>
+</p>
+<p>
+  <%= form.label :status %><br>
+  <%= form.text_field :status %><br>
+</p>
+<p>
+  <%= form.submit %>
+</p>
+<% end %>
