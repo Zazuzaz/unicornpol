@@ -1,3 +1,7 @@
+<!--Using form_with helper / using model to tie the form to a specific model so it can understand the column names as in that model
+    @offer is an instance variable, holding an instance of class Offer, created in offers_controller.rb
+    we use it to pass the id of the product to the `new` template
+ -->
 <%= form_with model: @offer, local: true do |form| %>
   <p>
     <%= @offer %>
