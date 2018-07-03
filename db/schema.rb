@@ -53,8 +53,10 @@ ActiveRecord::Schema.define(version: 20180627134946) do
     t.string "name", null: false
     t.text "description", null: false
     t.integer "suggested_price"
+    t.bigint "merchantprofile_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["merchantprofile_id"], name: "index_products_on_merchantprofile_id"
   end
 
 end
