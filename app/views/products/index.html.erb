@@ -3,6 +3,7 @@
 <% @product.each do |product| %>
         <table>
             <tr>
+              <td><%= product.id %></td>
               <td><%= link_to(product.name, product_path(product)) %></td>
               <td><%= product.description %></td>
               <td><%= product.suggested_price %></td>
