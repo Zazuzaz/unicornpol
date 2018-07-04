@@ -1,0 +1,19 @@
+<%= form_with local: true do |form| %>
+
+
+<p><%= @mynewoffer %></p>
+
+  <p>
+    <%= form.label :product_id %><br>
+    <%= form.text_field :product_id %>
+  </p> 
+
+  <p>
+    <%= form.label :customer_id %><br>
+    <%= form.text_area :customer_id %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

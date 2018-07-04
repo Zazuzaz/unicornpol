@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'mynewoffer/index'
+
   get 'welcome/index'
 
   resources :merchantprofile
@@ -7,6 +9,7 @@ Rails.application.routes.draw do
   	post 'make-offer', on: :member
   end
   resources :offer
+  resources :mynewoffer
 
   root 'welcome#index'
 
