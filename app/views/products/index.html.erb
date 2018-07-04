@@ -1,17 +1,15 @@
 
-<table width="1000px">
-    <th colspan="3">LISTA PRODUKTÓW</th>
-    <tr>
-      <td>
+<h3>List of products</h3>
 <% @product.each do |product| %>
-        <table id="produkt"; cellpadding="15">
-            <tr><td id="nazwa"><%= link_to(product.name, product_path(product)) %></td></tr>
-            <tr><td id="nazwa"><%= product.description %></td></tr>
-            <tr><td><%= product.suggested_price %></td></tr>
-    
-          <% end %>
+        <table>
+            <tr>
+              <td><%= product.id %></td>
+              <td><%= link_to(product.name, product_path(product)) %></td>
+              <td><%= product.description %></td>
+              <td><%= product.suggested_price %></td>
+              <td><%= link_to('Place new offer', make_offer_product_path(product)) %></td>
+            </tr>
         </table>
-      </td>
-    </tr>
-</table>
-<%= link_to("Dodaj produkt", new_product_path) %>
+<% end %>
+<br><br>
+<%= link_to("Add new product", new_product_path) %>
