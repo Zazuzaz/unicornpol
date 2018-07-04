@@ -1,0 +1,25 @@
+<table>
+    <tr>
+      <td><%= @product.name %></td>
+      <td><%= @product.description %></td>
+      <td><%= @product.suggested_price %></td>
+    </tr>
+</table>
+
+<%= form_with scope: :offer, url: make_offer_product_path(@product), local: true do |form| %>
+ 
+  <p>
+    <%= form.label :suggested_price %><br>
+    <%= form.text_field :suggested_price %>
+  </p>
+ 
+  <p>
+    <%= form.label :customer_id %><br>
+    <%= form.text_field :customer_id %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
