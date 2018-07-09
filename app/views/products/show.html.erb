@@ -1,8 +1,14 @@
+<table>
+	<tr>
+		<td><%= @product.name %></td>
+		<td><%= @product.description %></td>
+		<td><%= @product.suggested_price %></td>
+	</tr>
+</table>
 
-<h2><%= @product.name %></h2>
-  <p><%= @product.description %></p>
-  <p><%= @product.suggested_price %></p>
-
-<p><%= link_to("Edytuj produkt", edit_product_path(@product)) %></p>
+<!-- <p><%= link_to("Edytuj produkt", edit_product_path(@product)) %></p>
 <p><%= link_to 'Usuń produkt', product_path(@product), method: :delete, data: {confirm: "Czy na pewno chcesz usunąć ten produkt?"} %></p>
-<p><%= link_to("Powrót do listy produktów", products_path) %></p>
+ -->
+
+<br><br>
+ <p><%= link_to("Back", products_path) %></p>
