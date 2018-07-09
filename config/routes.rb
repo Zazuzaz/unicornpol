@@ -8,10 +8,9 @@ Rails.application.routes.draw do
   	get 'make-offer', on: :member
   	post 'make-offer', on: :member
   end
-  resources :offer
-  resources :mynewoffer
-
-  root 'welcome#index'
+  resources :offers
+  
+  root 'products#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
