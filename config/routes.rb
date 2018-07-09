@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'mynewoffer/index'
-
   get 'welcome/index'
 
   resources :merchantprofile
