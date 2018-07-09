@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
-  
   get 'welcome/index'
 
   resources :merchantprofile
-
   resources :products
-
   # resources :products do
   # 	get 'make-offer', on: :member
   # 	post 'make-offer', on: :member
