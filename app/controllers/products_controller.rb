@@ -11,20 +11,20 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
-  def make_offer
-    @product = Product.find(params[:id])
-    @offer = Offer.new(
-      product: @product, 
-      customer_id: 1, 
-      suggested_price: 999, 
-      description: '', title: '')
+  # def make_offer
+  #   @product = Product.find(params[:id])
+  #   @offer = Offer.new(
+  #     product: @product, 
+  #     customer_id: 1, 
+  #     suggested_price: 999, 
+  #     description: '', title: '')
 
-    if request.post? and @offer.save
-        redirect_to products_path
-      else
-        render 'make_offer'
-      end
-  end
+  #   if request.post? and @offer.save
+  #       redirect_to products_path
+  #     else
+  #       render 'make_offer'
+  #     end
+  # end
 
   def create
     product_params = params["product"].permit("name", "description")
@@ -50,3 +50,5 @@ class ProductsController < ApplicationController
   end
 
 end
+
+
