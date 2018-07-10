@@ -12,6 +12,7 @@
 
   <% @merchantprofile.each do |merchantprofile| %>
     <tr>
+      <td><%= merchantprofile.id %></td>
       <td><%= merchantprofile.name %></td>
       <td><%= merchantprofile.email %></td>
       <td><%= link_to 'Show', merchantprofile_path(merchantprofile) %></td>

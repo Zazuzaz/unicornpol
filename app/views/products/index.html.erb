@@ -7,9 +7,13 @@
               <td><%= link_to(product.name, product_path(product)) %></td>
               <td><%= product.description %></td>
               <td><%= product.suggested_price %></td>
-              <td><%= link_to('Place new offer', make_offer_product_path(product)) %></td>
+              <td><%= product.merchantprofile_id %></td>
             </tr>
         </table>
 <% end %>
 <br><br>
 <%= link_to("Add new product", new_product_path) %>
+
+
+
+

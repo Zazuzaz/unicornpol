@@ -8,7 +8,9 @@
 
 Product.destroy_all
 Customer.destroy_all
-Merchantprofile.destroy_all
+# Merchantprofile.destroy_all
+
+# Merchantprofile.create! name: "Abdulabdul", email: "brabo@grabo.com"
 
 20.times do |index|
   Customer.create!(name: Faker::Name.name,
@@ -19,6 +21,7 @@ Merchantprofile.destroy_all
 
   Product.create!(name: Faker::Superhero.power,
                 description: Faker::RickAndMorty.unique.quote, 
-                suggested_price: Faker::Number.between(42, 98398))
+                suggested_price: Faker::Number.between(42, 98398),
+                merchantprofile_id: 42 + index)
 
 end
