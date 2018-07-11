@@ -18,20 +18,23 @@
     </div>
 
     <div id="list">
-      <table width="1000px">
-          <th colspan="3">LISTA PRODUKTÓW</th>
+      <table style="width:1000px">
+          <th colspan="3" id="tytul">LISTA PRODUKTÓW</th>
           <tr>
+                <% for product in @products %>
             <td>
-              <% for product in @products %>
-              <table id="produkt"; cellpadding="15">
-                  <tr><td id="nazwa"><%= link_to(product.name, product_path(product)) %></td></tr>
-                  <tr><td id="nazwa"><%= product.description %></td></tr>
-                  <tr><td><%= product.suggested_price %></td></tr>
-                <% end %>
-              </table>
+                <table id="produkt"; cellpadding="15">
+                <tr>
+                  <td id="nazwa"><%= link_to(product.name, product_path(product)) %></td>
+                  <td><%= product.merchantprofile.name %></td>
+                </tr>
+                <tr><td id="cena"><%= product.suggested_price %></td></tr>
+                </table>
             </td>
-          </tr>
-      </table>
+                <% end %>
+        </tr>
+    </table>
+    <%= link_to("Dodaj produkt", new_product_path) %>
     </div>
     <div id="footer">
       <h4>Copyright © 2018 team bee. Wszelkie prawa zastrzeżone.</h4>
