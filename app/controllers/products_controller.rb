@@ -12,16 +12,10 @@ class ProductsController < ApplicationController
   end
 
   def create
+    @merchantprofile = Merchantprofile.find(params[:id])
     product_params = params["product"].permit("name", "description", "suggested_price", "merchantprofile_id")
     product = Product.create!(product_params)
     redirect_to(product_path(product))
-    end
-
-    if @product.save
-      redirect_to(products_path)
-    else
-      render 'new'
-    end
   end
 
   def edit
