@@ -28,7 +28,10 @@
                   <td id="nazwa"><%= link_to(product.name, product_path(product)) %></td>
                   <td><%= product.merchantprofile.name %></td>
                 </tr>
-                <tr><td id="cena"><%= product.suggested_price %></td></tr>
+                <tr>
+                  <td id="cena"><%= product.suggested_price %></td>
+                  <td id="nazwa"><%= link_to("Dodaj nową ofertę", new_offer_path) %></td>
+                </tr>
                 </table>
             </td>
                 <% end %>
