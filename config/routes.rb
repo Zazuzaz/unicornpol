@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
   get 'welcome/index'
 
-  resources :merchantprofile do
-  	resources :products
-  end
-  
+  resources :merchantprofile 
   resources :products
   resources :offers
   

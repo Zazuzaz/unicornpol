@@ -7,51 +7,5 @@
   <strong>Email:</strong>
   <%= @merchantprofile.email %>
 </p>
-
-
-<h2>Products</h2>
-<% @merchantprofile.products.each do |product| %>
-  <p>
-    <strong>Name:</strong>
-    <%= product.name %>
-  </p>
- 
-  <p>
-    <strong>Description:</strong>
-    <%= product.description %>
-  </p>
-
-  <p>
-    <strong>Suggested price:</strong>
-    <%= product.suggested_price %>
-  </p>
-<% end %>
-
 <br><br>
-
-
-
-
-<h2>Add new product:</h2>
-<%= form_with(model: [ @merchantprofile, @merchantprofile.products.build ], local: true) do |form| %>
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
-  <p>
-    <%= form.label :description %><br>
-    <%= form.text_area :description %>
-  </p>
-  <p>
-    <%= form.label :suggested_price %><br>
-    <%= form.text_area :suggested_price %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
-
-
-
-
 <%= link_to 'Back', merchantprofile_index_path %>
