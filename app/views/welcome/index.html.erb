@@ -1,2 +1,46 @@
-<h3>Welcome to Unicornpol</h3>
-<h3><%= link_to("See Product List", products_path) %></h3>
+<!doctype html>
+<html>
+  <head>
+    <title>Unicornpol</title>
+    <meta charset="UTF-8" />
+    <link type="text/css"; rel="stylesheet" href="stylesheet.css" />
+  </head>
+  <body>
+    <div id="header">
+      <h1>Unicornpol</h1>
+    </div>
+
+    <div id="login">
+    </div>
+
+    <div id="menu">
+      miejsce na menu
+    </div>
+
+    <div id="list">
+      <table width="1000px">
+          <th colspan="3" id="tytul">LISTA PRODUKTÓW</th>
+          <tr>
+                <% for product in @products %>
+            <td>
+                <table id="produkt"; cellpadding="15">
+                <tr>
+                  <td id="nazwa"><%= link_to(product.name, product_path(product)) %></td>
+                  <td><%= product.merchantprofile.name %></td>
+                </tr>
+                <tr>
+                  <td id="cena"><%= product.suggested_price %></td>
+                </tr>
+                </table>
+            </td>
+                <% end %>
+        </tr>
+    </table>
+    <%= link_to("Dodaj produkt", new_product_path) %>
+    </div>
+    <div id="footer">
+      <h4>Copyright © 2018 team bee. Wszelkie prawa zastrzeżone.</h4>
+    </div>
+
+  </body>
+</html>
