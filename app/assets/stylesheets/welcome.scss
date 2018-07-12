@@ -26,10 +26,6 @@ table {
   height:100px;
   background-color: pink;
 }
-
-#login {
-  align-self: right;
-}
 #menu {
   text-align: center;
   color: white;
@@ -48,14 +44,21 @@ table {
   margin-top: 170px;
   left: 50%;
   margin-left: -500px;
+	width:1000px;
 }
-#fot {
-  width:250px;
-  height:250px;
+#box {
+	  width: 330px;
+    height:150px;
+    float: left;
 }
 #nazwa {
   font-weight: bold;
   font-size: 20px;
+}
+#oferta {
+  font-weight: bold;
+  font-size: 20px;
+	text-align: right;
 }
 #cena {
   font-weight: bold;
@@ -64,6 +67,7 @@ table {
 	text-align: left;
 }
 #tytul {
+	text-align: center;
   font-weight: bold;
   font-size: 40px;
 	color:#DB7093;
@@ -72,15 +76,22 @@ table {
     width: 310px;
     border: 1px solid;
     border-color:#F5F5DC;
-
+}
+#nowy_produkt {
+	position: fixed;
+	width: 150px;
+	height: 100px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+	background-color: pink;
 }
 #merchant {
   text-align: right;
 }
 #footer {
-  text-align: center;
+ 	text-align: center;
   width:1000px;
   height:30px;
   background-color: pink;
-  margin-bottom: 0;
 }
