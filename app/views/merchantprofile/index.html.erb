@@ -1,6 +1,6 @@
 
 <h1>Listing merchants</h1>
- 
+
 <%= link_to 'New merchant profile', new_merchantprofile_path %>
 <table>
   <tr>
@@ -8,13 +8,13 @@
     <th>Email</th>
     <th></th>
   </tr>
- 
+
 
   <% @merchantprofile.each do |merchantprofile| %>
     <tr>
       <td><%= merchantprofile.name %></td>
       <td><%= merchantprofile.email %></td>
-      <td><%= link_to 'Show', merchantprofile_index_path(merchantprofile) %></td>
+      <td><%= link_to 'Show', merchantprofile_path(merchantprofile) %></td>
     </tr>
   <% end %>
 </table>
