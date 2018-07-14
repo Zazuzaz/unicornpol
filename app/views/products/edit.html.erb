@@ -1,15 +1,21 @@
 
-  <%= form_for(@product) do |form| %>
+<%= form_for(@product) do |form| %>
+
   <p><%= form.label("Sprzedawca") %></p>
   <p><%= form.text_field("merchantprofile_id") %></p>
-    <p><%= form.label("Nazwa") %></p>
-    <p><%= form.text_field("name") %></p>
-    <p><%= form.label("Opis") %></p>
-    <p><%= form.text_area("description") %></p>
-    <p><%= form.label("Oferta") %></p>
-    <p><%= form.text_field("suggested_price") %></p>
-    <p><%= form.submit %></p>
-  <% end %>
-  <p><%= link_to 'Usuń produkt', product_path(@product), method: :delete, data: {confirm: "Czy na pewno chcesz usunąć ten produkt?"} %></p>
-  <p><%= link_to("Anuluj", product_path(@product)) %></p>
-  <p><%= link_to("Powrót do listy produktów", products_path) %></p>
+
+  <p><%= form.label("Nazwa") %></p>
+  <p><%= form.text_field("name") %></p>
+
+  <p><%= form.label("Opis") %></p>
+  <p><%= form.text_area("description") %></p>
+
+  <p><%= form.label("Oferta") %></p>
+  <p><%= form.text_field("suggested_price") %></p>
+
+  <p><%= form.submit %></p>
+
+<% end %>
+
+<p><%= link_to 'Delete', product_path(@product), method: :delete, data: {confirm: "Are you sure?"} %></p>
+<p><%= link_to("Back", products_path) %></p>

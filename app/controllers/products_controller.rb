@@ -12,7 +12,6 @@ class ProductsController < ApplicationController
   end
 
 # CO jeśli nie przejdą walidacje w create
-# Narazie powinno z automatu dawać Merchantprofile.first
   def create
     product = Product.create!(product_params)
 
@@ -23,6 +22,7 @@ class ProductsController < ApplicationController
     end
   end
 
+#Dodać przycisk 'edit' w view
   def edit
     @product = Product.find(params[:id])
   end
@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
     product = Product.find(params[:id])
     product.update(product_params)
     
-    if product.update
+    if product.update(product_params)
       redirect_to(product_path(product))
     else
       render 'edit'
