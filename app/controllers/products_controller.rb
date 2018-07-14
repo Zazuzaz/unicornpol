@@ -12,10 +12,15 @@ class ProductsController < ApplicationController
   end
 
 # CO jeśli nie przejdą walidacje w create
+# Narazie powinno z automatu dawać Merchantprofile.first
   def create
-    @merchantprofile = Merchantprofile.find(params[:id])
     product = Product.create!(product_params)
-    redirect_to(product_path(product))
+
+    if product.save
+      redirect_to(product_path(product))
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -27,7 +32,12 @@ class ProductsController < ApplicationController
   def update
     product = Product.find(params[:id])
     product.update(product_params)
-    redirect_to(product_path(product))
+    
+    if product.update
+      redirect_to(product_path(product))
+    else
+      render 'edit'
+    end
   end
 
   def destroy
@@ -38,7 +48,7 @@ class ProductsController < ApplicationController
 
   private
     def product_params
-      params.require(:product).permit(:name, :description, :suggested_price, merchantprofile_id:)
+      params.require(:product).permit(:name, :description, :suggested_price, :merchantprofile_id)
     end
 
 end
