@@ -11,9 +11,9 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+# CO jeśli nie przejdą walidacje w create
   def create
     @merchantprofile = Merchantprofile.find(params[:id])
-    product_params = params["product"].permit("name", "description", "suggested_price", "merchantprofile_id")
     product = Product.create!(product_params)
     redirect_to(product_path(product))
   end
@@ -22,8 +22,9 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+
+# Co jeśli nie przejdą walidacje w update
   def update
-    product_params = params["product"].permit("name", "description", "suggested_price", "merchantprofile_id")
     product = Product.find(params[:id])
     product.update(product_params)
     redirect_to(product_path(product))
@@ -34,6 +35,11 @@ class ProductsController < ApplicationController
     @product.destroy
     redirect_to(products_path(@product))
   end
+
+  private
+    def product_params
+      params.require(:product).permit(:name, :description, :suggested_price, merchantprofile_id:)
+    end
 
 end
 

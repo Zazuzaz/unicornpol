@@ -7,10 +7,11 @@ class OfferController < ApplicationController
 		@offer = Offer.find(params[:id])
 	end	
 
-	# def new
-	# 	@offer = Offer.new
-	# 	@product = Product.find(params[:id])
-	# end
+# Czy widok new wyświetli błędy walidacji?
+	def new
+		@offer = Offer.new
+		@product = Product.find(params[:id])
+	end
 
 	def create
 		@offer = Offer.new(offer_params)
@@ -23,7 +24,7 @@ class OfferController < ApplicationController
 	end
 
 	private
-		  def offer_params
-		    params.require(:offer).permit(:suggested_price, :product_id, :customer_id)
-		  end
+	  def offer_params
+	    params.require(:offer).permit(:suggested_price, :product_id, :customer_id)
+	  end
 end

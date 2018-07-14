@@ -7,7 +7,7 @@
     </tr>
 </table>
 
-<%= form_with scope: :offer, url: new_offer_path, local: true do |form| %>
+<%= form_with scope: :offer, url: create_offer_path, local: true do |form| %>
   <p>
     <%= form.label :product_id %><br>
     <%= form.text_field :product_id %>

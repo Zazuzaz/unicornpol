@@ -8,9 +8,7 @@
 
 Product.destroy_all
 Customer.destroy_all
-# Merchantprofile.destroy_all
-
-# Merchantprofile.create! name: "Abdulabdul", email: "brabo@grabo.com"
+Merchantprofile.destroy_all
 
 20.times do |index|
   Customer.create!(name: Faker::Name.name,
