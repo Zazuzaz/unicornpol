@@ -1,26 +1,21 @@
 class OfferController < ApplicationController
-	def index
-		@offer = Offer.all
-	end
+	# def index
+	# 	@offer = Offer.all
+	# end
 
-	def show
-		@offer = Offer.find(params[:id])
-	end	
+	# def show
+	# 	@offer = Offer.find(params[:id])
+	# end	
 
 # Czy widok new wyświetli błędy walidacji?
-	def new
-		@offer = Offer.new
-		@product = Product.find(params[:id])
-	end
+	# def new
+	# 	@offer = Offer.new
+	# end
 
 	def create
+		@product = Product.find(params[:product_id])
 		@offer = Offer.new(offer_params)
- 		
- 		if @offer.save
-  			redirect_to @offer
-  		else
-  			render 'new'
-  		end
+  	redirect_to (product_path(@product))
 	end
 
 	def update

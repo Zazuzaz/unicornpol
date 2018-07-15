@@ -19,7 +19,6 @@ Merchantprofile.destroy_all
 
   Product.create!(name: Faker::Superhero.power,
                 description: Faker::RickAndMorty.unique.quote, 
-                suggested_price: Faker::Number.between(42, 98398),
-                merchantprofile_id: 42 + index)
-
+                suggested_price: Faker::Number.between(42, 9839),
+                merchantprofile_id: Merchantprofile.last.id)
 end
