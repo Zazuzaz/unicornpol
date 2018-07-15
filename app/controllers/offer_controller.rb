@@ -23,6 +23,23 @@ class OfferController < ApplicationController
   		end
 	end
 
+	def update
+    @offer = Offer.find(params[:id])
+ 
+    if @offer.update(offer_params)
+      redirect_to @offer
+    else
+      render 'edit'
+    end
+  end
+ 
+  def destroy
+    @offer = Offer.find(params[:id])
+    @offer.destroy
+ 
+    redirect_to offers_path
+  end
+
 	private
 	  def offer_params
 	    params.require(:offer).permit(:suggested_price, :product_id, :customer_id)

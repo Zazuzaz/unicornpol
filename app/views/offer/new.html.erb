@@ -1,3 +1,5 @@
+<%= link_to 'Back', product_path(product) %>
+
 <table>
     <tr>
       <td><%= @product.name %></td>
@@ -7,7 +9,21 @@
     </tr>
 </table>
 
-<%= form_with scope: :offer, url: create_offer_path, local: true do |form| %>
+<%= form_with scope: :offer, url: offers_path, local: true do |form| %>
+
+  <% if @offer.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@offer.errors.count, "error") %> prohibited this offer from being saved
+      </h2>
+      <ul>
+        <% @offer.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <p>
     <%= form.label :product_id %><br>
     <%= form.text_field :product_id %>
@@ -27,5 +43,3 @@
     <%= form.submit %>
   </p>
 <% end %>
-
-<%= link_to 'Back', product_path(product) %>
