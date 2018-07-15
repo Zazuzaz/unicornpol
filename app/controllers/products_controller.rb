@@ -9,9 +9,9 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    
   end
 
-# CO jeśli nie przejdą walidacje w create
   def create
     product = Product.create!(product_params)
 
@@ -22,13 +22,11 @@ class ProductsController < ApplicationController
     end
   end
 
-#Dodać przycisk 'edit' w view
   def edit
     @product = Product.find(params[:id])
   end
 
 
-# Co jeśli nie przejdą walidacje w update
   def update
     product = Product.find(params[:id])
     product.update(product_params)

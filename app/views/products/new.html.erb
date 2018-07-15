@@ -1,5 +1,7 @@
-<%= form_for(Product.new) do |form| %>
+<%= form_for @product do |form| %>
 
+
+<!-- Walidacja nie działa -->
 	<% if @product.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -13,7 +15,7 @@
     </div>
   <% end %>
 
-  <%= form.hidden_field :merchantprofile_id, value: Merchantprofile.first.id %>
+  <%= form.hidden_field :merchantprofile_id, value: Merchantprofile.last.id %>
  
   <p><%= form.label("Name") %></p>
   <p><%= form.text_field("name") %></p>

@@ -18,4 +18,54 @@
 		<td><%= link_to 'Delete', product_path(@product), method: :delete, data: {confirm: "Are you sure?"} %></td>
 	</tr>
 </table>
+<br><br>
 
+<% if false %> 
+
+Dodawanie offer narazie nie działa
+<h1>Offers:</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Suggested price</th>
+    <th>Description</th>
+    <th>Title</th>
+    <th>Status</th>
+    <th>Customer</th>
+    <th></th>
+  </tr>
+
+  <% @product.offer.each do |offer| %>
+    <tr>
+      <td><%= offer.suggested_price %>_pln</td>
+      <td><%= offer.description %></td>
+      <td><%= offer.title %></td>
+      <td><%= offer.status %></td>
+      <td><%= offer.customer_id %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br><br>
+
+
+<h2>Add offer:</h2>
+<%= form_with(model: [ @product, @product.offer.build ], local: true) do |form| %>
+	
+	<%= form.hidden_field :description, value: "offer description" %>
+	<%= form.hidden_field :title, value: "offer title" %>
+	<%= form.hidden_field :status, value: "proposed" %>
+	<%= form.hidden_field :product_id, value: @product.product_id %>
+	<%= form.hidden_field :customer_id, value: Customer.last.id %>
+
+  <p>
+    <%= form.label :suggested_price %><br>
+    <%= form.text_field :suggested_price %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<% end %>
