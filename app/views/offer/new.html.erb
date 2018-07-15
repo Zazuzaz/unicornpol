@@ -1,0 +1,45 @@
+<%= link_to 'Back', product_path(product) %>
+
+<table>
+    <tr>
+      <td><%= @product.name %></td>
+      <td><%= @product.description %></td>
+      <td><%= @product.suggested_price %></td>
+      <td><%= @product.merchantprofile_id %></td>
+    </tr>
+</table>
+
+<%= form_with scope: :offer, url: offers_path, local: true do |form| %>
+
+  <% if @offer.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@offer.errors.count, "error") %> prohibited this offer from being saved
+      </h2>
+      <ul>
+        <% @offer.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :product_id %><br>
+    <%= form.text_field :product_id %>
+  </p>
+
+  <p>
+    <%= form.label :suggested_price %><br>
+    <%= form.text_field :suggested_price %>
+  </p>
+ 
+  <p>
+    <%= form.label :customer_id %><br>
+    <%= form.text_field :customer_id %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

@@ -6,6 +6,6 @@ class Offer < ApplicationRecord
   validates :status, presence: true
   validates :customer, presence: true
 
-  belongs_to :product
-  belongs_to :customer
+  belongs_to :product, foreign_key: 'product_id'
+  belongs_to :customer, foreign_key: 'customer_id'
 end

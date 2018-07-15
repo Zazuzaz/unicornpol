@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MerchantProfileControllerTest < ActionDispatch::IntegrationTest
+class OfferControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

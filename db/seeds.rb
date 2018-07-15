@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Product.destroy_all
+Customer.destroy_all
+Merchantprofile.destroy_all
+
+20.times do |index|
+  Customer.create!(name: Faker::Name.name,
+  				email: Faker::Internet.email)
+
+  Merchantprofile.create!(name: Faker::Name.name,
+  				email: Faker::Internet.email)
+
+  Product.create!(name: Faker::Superhero.power,
+                description: Faker::RickAndMorty.unique.quote, 
+                suggested_price: Faker::Number.between(42, 9839),
+                merchantprofile_id: Merchantprofile.last.id)
+end
